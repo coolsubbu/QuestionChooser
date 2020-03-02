@@ -48,7 +48,9 @@ from sklearn.metrics import mutual_info_score
 def abbrevate(given):
     sentence=given.split()
     abbr_dict={}
-    with open("C:/Users/Yogesh/Desktop/New folder (2)/abbr.txt") as abbr_file:
+    foldr="C:/Users/Yogesh/Desktop/New"
+    fil='abbr.txt'
+    with open(flodr+'/'+fil) as abbr_file:
         for line in abbr_file:
                 line_words=line.split('\t');
                 #print (line_words)
@@ -167,12 +169,12 @@ def similarity(string1,string2):
 
 data=[]
 abbr_dict={}
-with open("C:/Users/Yogesh/Desktop/New folder (2)/data.json") as data_file:
+with open(foldr+"/data.json") as data_file:
 	for line in data_file:
 		data.append(json.loads(line))
 #"""
 #abbreviations data
-with open("C:/Users/Yogesh/Desktop/New folder (2)/abbr.txt") as abbr_file:
+with open(foldr+"/abbr.txt") as abbr_file:
         for line in abbr_file:
                 line_words=line.split('\t');
                 #print (line_words)
