@@ -1,28 +1,28 @@
 """
  this program finds the distance between user question and the available questions and answers , in order to find the most matching question
 
-Semantic similarity
- 1. Sentence Segmentation: we split the input string/question string and answers strings into sentences. and further sentences into words.
- 2. Abbreviations of acronyms: we expand the captilized possible acronyms with abbreviations given by  a file(online).
- 3. Stop words elimination: we eliminate the stop from the word vectors.
- 4. Remove Punctuation: we remove punctuations.
- 5. Parts of speech Tagging: the words are tagged to their corresponding parts of english sentence grammar.
- 6. Word sense Identification: we find the word sense of the words using wordnet package. it gives the synonyms, and definitions of the word senses 
- 7. Word Sense Disambiguation using Lesk algorithm: we capture the most appropriate word sense applicable from the synonyms provided by wordnet.
- 8. Path similarity between word senses: word senses are stored in a paths representative of their etymology including hypernyms and hyponyms of the word.Path similarity gives a notion of their closeness.
- 9. lch_similairty between the word senses: Leacock-Chodorow Similarity:  a score denoting how similar two word senses are, based on the shortest path that connects the senses 
-10. wup_similarity between the word senses: Wu-Palmer Similarity: how similar two word senses are, based on the depth of the two senses in the taxonomy
+semantic similarity
+ 1. sentence segmentation: we split the input string/question string and answers strings into sentences. and further sentences into words.
+ 2. abbreviations of acronyms: we expand the captilized possible acronyms with abbreviations given by  a file(online).
+ 3. stop words elimination: we eliminate the stop from the word vectors.
+ 4. remove punctuation: we remove punctuations.
+ 5. parts of speech tagging: the words are tagged to their corresponding parts of english sentence grammar.
+ 6. word sense identification: we find the word sense of the words using wordnet package. it gives the synonyms, and definitions of the word senses 
+ 7. word sense disambiguation using Lesk algorithm: we capture the most appropriate word sense applicable from the synonyms provided by wordnet.
+ 8. path similarity between word senses: word senses are stored in a paths representative of their etymology including hypernyms and hyponyms of the word.Path similarity gives a notion of their closeness.
+ 9. lch_similairty between the word senses: Leacock Chodorow similarity:  a score denoting how similar two word senses are, based on the shortest path that connects the senses 
+10. wup_similarity between the word senses: Wu Palmer similarity: how similar two word senses are, based on the depth of the two senses in the taxonomy
 11. we find the max similarity between any words of two strings and add max similarity for all words in from the strings
 
-Vector similarity:
+vector similarity:
  1. we obtain vectors out of the strings using their term-document-frequency and inverse document-frequency score (tdf-idf)
  2. we find mathematical similarity between those two vectors using the following scores
-     a. Cosine similarity: the cosine distance between vector A and B based on the angle between them.
-     b. Correlation Coefficient: indicates how positiviley or negatively correlated are the vectors.
-     c. Bray-Curtis Score: Quantify the compositional dissimilarity between two different sites, based on counts at each site.
-     d. city-Block: Manhattan score: The distance between two points measured along axes at right angles
-     e. Sorenson-dice coefficient based on bigrams
-     f. yule distance between vectors: yule dissimilarity score between two boolean arrays
+     a. cosine similarity: the cosine distance between vector A and B based on the angle between them.
+     b. correlation coefficient: indicates how positiviley or negatively correlated are the vectors.
+     c. Bray Curtis score: quantify the compositional dissimilarity between two different sites, based on counts at each site.
+     d. city block: manhattan score: the distance between two points measured along axes at right angles
+     e. Sorenson Dice coefficient based on bigrams
+     f. Yule distance between vectors: yule dissimilarity score between two boolean arrays
      g. hamming distance between vectors: number used to denote the difference between two binary strings
 
 we combine scores using arbitrary weights to produce a total similarity score.
